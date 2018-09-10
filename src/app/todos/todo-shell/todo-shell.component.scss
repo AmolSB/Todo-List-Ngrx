@@ -1,3 +1,11 @@
-.todo-shell {
-  margin: 0;
+.card {
+  background: inherit;
+  border: none;
+  width: 30%
+}
+
+.todo-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -6,7 +6,7 @@ import { AppLoginComponent } from './authentication/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppHeaderComponent } from './home/header.component';
 import { AppWelcomeComponent } from './home/welcome.component';
-
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'
 import { MockTodos } from './mock-data/mock-todos';
@@ -29,6 +29,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     TodoModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(MockTodos),

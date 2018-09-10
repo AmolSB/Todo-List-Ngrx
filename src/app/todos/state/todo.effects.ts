@@ -15,5 +15,16 @@ export class TodoEffects {
     mergeMap((action: todoActions.Load) => this.todoService.getTodos().pipe(
       map((todos: Todo[]) => (new todoActions.LoadSuccess(todos)))
     ))
+  );
+
+  @Effect()
+  addTodo$ = this.actions$.pipe(
+    ofType(todoActions.TodoActionTypes.AddTodo),
+    map((action: todoActions.AddTodo) => action.payload),
+    mergeMap((todo: Todo) => 
+      this.todoService.addtodo(todo).pipe(
+        map(addedTodo => (new todoActions.AddTodoSuccess(addedTodo)))
+      )  
+    )
   )
 }

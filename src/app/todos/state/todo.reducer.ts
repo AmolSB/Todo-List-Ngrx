@@ -38,6 +38,13 @@ export function reducer(state: TodoState = initialState, action: TodoActions) {
         todos: [],
         error: action.payload
       }
+
+    case TodoActionTypes.AddTodoSuccess:
+      return {
+        ...state,
+        todos: [...state.todos, action.payload],
+        error: ''
+      }
     default:
       return state
   }

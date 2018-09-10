@@ -12,12 +12,20 @@ import { Observable } from 'rxjs';
 })
 export class AppTodoListComponent implements OnInit { 
   todos$: Observable<Todo[]>;
+  todo: string;
   constructor(private todoService: TodoService, private store: Store<any>) { }
   
   ngOnInit() {
     this.store.dispatch(new todoActions.Load());
 
     this.todos$ = this.store.pipe(select(fromTodo.getTodos))
+  }
+
+  addTodo() {
+    let todo: Todo  = {
+      description: this.todo
+    }
+    this.store.dispatch(new todoActions.AddTodo(todo))
   }
 
 }
