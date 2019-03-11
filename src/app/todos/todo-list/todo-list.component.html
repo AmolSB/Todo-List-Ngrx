@@ -1,7 +1,0 @@
-<ul class="todo-items">
-  <li class="list-group-item" *ngFor="let todo of todos$ | async">
-    <span>{{ todo.description }}</span>
-    <span>X</span>
-  </li>
-  <input [(ngModel)]="todo" class="list-group-item" placeholder="Enter your task" (blur)="addTodo()">
-</ul>
